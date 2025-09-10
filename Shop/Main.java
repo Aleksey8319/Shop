@@ -54,9 +54,11 @@ public class Main {
         }
     }
 
+    //принцип DRY - вывод списка продуктов на экран выносим в отдельный метод
     private static void showListProducts() {
         if (!listProducts.isEmpty()) {
-            for (int i = 0; i < listProducts.size(); i++) {     // Магические числа
+    // Magic - не используем числа на прямую, используем длину списка
+            for (int i = 0; i < listProducts.size(); i++) {     
                 System.out.println("Продукт: " + listProducts.get(i).getName() + " - Цена: " + listProducts.get(i).getPrice() + " руб.");
             }
         } else {
@@ -122,3 +124,4 @@ public class Main {
     }
 
 }
+
