@@ -1,6 +1,6 @@
 package Shop;
 
-//Принцип открытости - имплементируя интерфейс Food, мы добавляем классу функциональности, не изменяя его код
+//Принцип единственной ответственности - класс Bread описывает только хлеб, а не все продукты
 public class Bread extends Product implements Food {
     private final String name = "хлеб";
     private final double price = 50;
@@ -25,4 +25,5 @@ public class Bread extends Product implements Food {
         System.out.println("Хлеб съеден");
     }
 }
+
 
