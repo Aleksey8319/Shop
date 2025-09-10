@@ -10,11 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        listProducts.add(new Product("молоко", 120.00));
-        listProducts.add(new Product("хлеб", 50.00));
-        listProducts.add(new Product("гречка", 126.00));
-        listProducts.add(new Product("рис", 253.00));
-        listProducts.add(new Product("печенье", 168.00));
+        listProducts.add(new Milk());
+        listProducts.add(new Bread());
+        listProducts.add(new Rice());
 
         while (true) {
             System.out.println("\nВыберите операцию:" + "\n" +
@@ -25,9 +23,7 @@ public class Main {
                     "4. Удалить товар из корзины" + "\n" +
                     "5. Посмотреть корзину" + "\n" +
                     "6. Отследить заказ" + "\n" +
-                    "7. Повторить заказ" + "\n" +
-                    "8. Вернуть заказ" + "\n" +
-                    "9. Выход");
+                    "7. Выход");
 
             Scanner scanner = new Scanner(System.in);
             switch (scanner.nextInt()) {
@@ -50,12 +46,6 @@ public class Main {
                     trackOrder();
                     break;
                 case 7:
-                    repeatOrder();
-                    break;
-                case 8:
-                    returnOrder();
-                    break;
-                case 9:
                     System.exit(0);
                     break;
                 default:
@@ -131,12 +121,4 @@ public class Main {
         System.out.println("Статус заказа № " + orderId + ": " + tracker.getDeliveryStatus());
     }
 
-    private static void repeatOrder() {
-        System.out.println("Еще не продумал как реализовать");
-    }
-
-
-    private static void returnOrder() {
-        System.out.println("Еще не продумал как реализовать");
-    }
 }
