@@ -1,5 +1,6 @@
 package Shop;
 
+//Принцип открытости - имплементируя интерфейс Food, мы добавляем классу функциональности, не изменяя его код
 public class Rice extends Product implements Food{
     private final String name = "рис";
     private final double price = 253;
@@ -24,4 +25,5 @@ public class Rice extends Product implements Food{
         System.out.println("Рис съеден");
     }
 }
+
 
