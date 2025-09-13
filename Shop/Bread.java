@@ -26,6 +26,3 @@ public class Bread extends Product implements Food {
         System.out.println("Хлеб съеден");
     }
 }
-
-
-
