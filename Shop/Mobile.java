@@ -13,7 +13,9 @@ class Mobile extends Product implements Clock, SMSer{
 
     @Override
     public void Alarm() {
-        System.out.println("Пора вставать!");
+        if (time.equals("07:00")) {
+            System.out.println("Пора вставать!");
+        }
     }
 
     @Override
@@ -21,4 +23,5 @@ class Mobile extends Product implements Clock, SMSer{
         System.out.println("Отправляет сообщения.");
     }
 }
+
 
