@@ -12,16 +12,13 @@ class Mobile extends Product implements Clock, SMSer{
     }
 
     @Override
-    public void setAlarm(String time) {
-        if (this.time.equals(time)) {
-            System.out.println("Пора вставать!");
-        }
+    public void Alarm() {
+        System.out.println("Пора вставать!");
     }
 
     @Override
-    public void sendSMS(String msg, String number) {
-        if (number.isEmpty()) {
-            System.out.println(msg);
-        }
+    public void sendSMS() {
+        System.out.println("Отправляет сообщения.");
     }
 }
+
