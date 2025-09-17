@@ -1,14 +1,20 @@
 package Shop;
 
-/* Принцип разделения - используем несколько интерфейсов вместо одного большого
-    Принцип инверсии зависимостей - зависимость от абстракции */
-class Mobile extends Product implements Clock, SMSer{
+// Принцип разделения - используем несколько интерфейсов вместо одного большого
+
+class Mobile extends Product implements Clock, Device{
     private final String name = "мобильник";
     private final double price = 25000;
     private String time;
+    private SMSer sms;
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    //Принцип инверсии зависимостей - зависимость от абстракции
+    public void sendSms (SMSer sms, String msg) {
+        sms.send(msg);
     }
 
     @Override
@@ -19,9 +25,10 @@ class Mobile extends Product implements Clock, SMSer{
     }
 
     @Override
-    public void sendSMS() {
-        System.out.println("Отправляет сообщения.");
+    public void enable() {
+        System.out.println("Включен");
     }
+
+
+
 }
-
-
