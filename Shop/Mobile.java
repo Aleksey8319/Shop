@@ -6,14 +6,15 @@ class Mobile extends Product implements Clock, Device{
     private final String name = "мобильник";
     private final double price = 25000;
     private String time;
-    private SMSer sms;
+    private Message sms;
 
     public void setTime(String time) {
         this.time = time;
     }
 
     //Принцип инверсии зависимостей - зависимость от абстракции
-    public void sendSms (SMSer sms, String msg) {
+    public void sendSms (Message sms, String msg) {
+        this.sms = sms;
         sms.send(msg);
     }
 
@@ -32,3 +33,4 @@ class Mobile extends Product implements Clock, Device{
 
 
 }
+
